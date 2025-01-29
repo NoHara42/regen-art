@@ -3,24 +3,19 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const artists = [
 	{
-		name: "Elena Rivera",
-		bio: "Digital artist exploring the intersection of nature and technology",
-		specialty: "Digital Art",
+		name: "Joëlle Desarzens",
+		bio: "An art generalist creating immersive experiences",
+		specialty: "Art Education",
 	},
 	{
-		name: "Marcus Chen",
-		bio: "Environmental sculptor working with sustainable materials",
-		specialty: "Sculpture",
+		name: "Ned O'Hara",
+		bio: "Digital artist exploring the intersection of art and technology",
+		specialty: "Digital Humanist",
 	},
 	{
-		name: "Sofia Patel",
-		bio: "Painter focused on climate change awareness through art",
-		specialty: "Painting",
-	},
-	{
-		name: "Lucas Schmidt",
-		bio: "Mixed media artist exploring regenerative themes",
-		specialty: "Mixed Media",
+		name: "?",
+		bio: "This could be you.",
+		specialty: "Join us!",
 	},
 ];
 
