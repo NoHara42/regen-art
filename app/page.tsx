@@ -22,6 +22,37 @@ const item = {
 };
 
 export default function Home() {
+	const features = [
+		{
+			icon: Palette,
+			title: "Artist Support",
+			description:
+				"We provide technical guidance and support to help artists mint their work as NFTs.",
+			blogSlug: "artist-support-technical-guidance",
+		},
+		{
+			icon: Coins,
+			title: "Fair Revenue",
+			description:
+				"50% of sales go directly to artists, with the other 50% supporting platform growth and art residencies.",
+			blogSlug: "fair-revenue-model",
+		},
+		{
+			icon: Leaf,
+			title: "Regenerative Focus",
+			description:
+				"Supporting regenerative communities and sustainable practices in the art world.",
+			blogSlug: "regenerative-focus-sustainable-art",
+		},
+		{
+			icon: Users,
+			title: "Community",
+			description:
+				"Join a growing community of artists and collectors committed to positive change.",
+			blogSlug: "community-collective-impact",
+		},
+	];
+
 	return (
 		<div className="space-y-16">
 			<motion.div
@@ -30,7 +61,7 @@ export default function Home() {
 				transition={{ duration: 0.5 }}
 				className="text-center"
 			>
-				<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50">
+				<h1 className="text-3xl h-20 mt-6 sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50">
 					Regen-Art Collective
 				</h1>
 				<p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
@@ -69,50 +100,27 @@ export default function Home() {
 				animate="show"
 				className="grid grid-responsive-4 gap-4 sm:gap-6"
 			>
-				{[
-					{
-						icon: Palette,
-						title: "Artist Support",
-						description:
-							"We provide technical guidance and support to help artists mint their work as NFTs.",
-					},
-					{
-						icon: Coins,
-						title: "Fair Revenue",
-						description:
-							"50% of sales go directly to artists, with the other 50% supporting platform growth and art residencies.",
-					},
-					{
-						icon: Leaf,
-						title: "Regenerative Focus",
-						description:
-							"Supporting regenerative communities and sustainable practices in the art world.",
-					},
-					{
-						icon: Users,
-						title: "Community",
-						description:
-							"Join a growing community of artists and collectors committed to positive change.",
-					},
-				].map((feature) => (
+				{features.map((feature) => (
 					<motion.div
 						key={feature.title}
 						variants={item}
 						className="w-full"
 					>
-						<Card className="h-full group hover:shadow-lg transition-shadow duration-300">
-							<CardContent className="pt-6 h-full flex flex-col">
-								<div className="flex items-center gap-4 mb-4">
-									<feature.icon className="h-6 w-6 sm:h-8 sm:w-8 text-primary group-hover:scale-110 transition-transform duration-300" />
-									<h3 className="text-lg sm:text-xl font-semibold">
-										{feature.title}
-									</h3>
-								</div>
-								<p className="text-sm sm:text-base text-muted-foreground flex-grow">
-									{feature.description}
-								</p>
-							</CardContent>
-						</Card>
+						<Link href={`/blog/${feature.blogSlug}`}>
+							<Card className="h-full group hover:shadow-lg transition-shadow duration-300">
+								<CardContent className="pt-6 h-full flex flex-col">
+									<div className="flex items-center gap-4 mb-4">
+										<feature.icon className="h-6 w-6 sm:h-8 sm:w-8 text-primary group-hover:scale-110 transition-transform duration-300" />
+										<h3 className="text-lg sm:text-xl font-semibold">
+											{feature.title}
+										</h3>
+									</div>
+									<p className="text-sm sm:text-base text-muted-foreground flex-grow">
+										{feature.description}
+									</p>
+								</CardContent>
+							</Card>
+						</Link>
 					</motion.div>
 				))}
 			</motion.div>

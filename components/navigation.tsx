@@ -51,7 +51,7 @@ export function Navigation() {
 					href={route.href}
 					onClick={() => isMobile && setIsOpen(false)}
 					className={cn(
-						"transition-colors align-middle h-full content-center hover:text-primary relative",
+						"transition-colors align-middle text-center h-full content-center hover:text-primary relative",
 						isMobile
 							? "block py-4 text-lg border-b"
 							: "transition-colors hover:text-primary relative",
